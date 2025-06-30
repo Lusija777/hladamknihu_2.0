@@ -1,6 +1,7 @@
 import functools
 import click
 from flask.cli import with_appcontext
+from flask_babel import gettext as _
 
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
@@ -25,17 +26,15 @@ def login():
             'SELECT * FROM user WHERE username = ?', (username,)
         ).fetchone()
 
-        if user is None:
-            error = 'Incorrect username.'
-        elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
+        if user is None or not check_password_hash(user['password'], password):
+            error = 'Incorrect username or password.'
 
         if error is None:
             session.clear()
             session['user_id'] = user['id']
             return redirect(url_for('index'))
 
-        flash(error)
+        flash(_(error))
 
     return render_template('auth/login.html')
 
@@ -74,9 +73,9 @@ def create_user_command(username, password):
     error = None
 
     if not username:
-        error = 'Username is required.'
+        error = _('Username is required.')
     elif not password:
-        error = 'Password is required.'
+        error = _('Password is required.')
 
     if error is None:
         try:
@@ -85,9 +84,9 @@ def create_user_command(username, password):
                 (username, generate_password_hash(password)),
             )
             db.commit()
-            click.echo(f"User {username} created successfully.")
+            click.echo(_("User %(username) is created successfully.") % {'username': username})
         except db.IntegrityError:
-            error = f"User {username} is already registered."
+            click.echo(_("User %(username) is already registered.") % {'username': username})
             click.echo(error, err=True)
     else:
         click.echo(error, err=True)

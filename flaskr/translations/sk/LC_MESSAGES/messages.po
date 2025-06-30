@@ -1,0 +1,104 @@
+# Slovak translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-06-30 15:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: sk\n"
+"Language-Team: sk <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: flaskr/auth.py:76
+msgid "Username is required."
+msgstr "Používateľské meno je povinné."
+
+#: flaskr/auth.py:78
+msgid "Password is required."
+msgstr "Heslo je povinné."
+
+#: flaskr/auth.py:87
+#, python-format
+msgid "User %(username) is created successfully."
+msgstr "Používateľ %(username) bol úspešne vytvorený."
+
+#: flaskr/auth.py:89
+#, python-format
+msgid "User %(username) is already registered."
+msgstr "Používateľ %(username) bol už raz registrovaný."
+
+#: flaskr/blog.py:31 flaskr/blog.py:74
+msgid "Title is required."
+msgstr "Názov je povinný."
+
+#: flaskr/blog.py:56
+#, python-format
+msgid "Post id %(id) doesn't exist."
+msgstr "Id %(id) daného člácku neexistuje"
+
+#: flaskr/templates/base.html:23
+msgid "Log Out"
+msgstr "Odhlásiť sa"
+
+#: flaskr/templates/auth/login.html:3 flaskr/templates/auth/login.html:8
+#: flaskr/templates/auth/login.html:31 flaskr/templates/base.html:27
+msgid "Log In"
+msgstr "Prihlásiť sa"
+
+#: flaskr/templates/auth/login.html:12
+msgid "Username"
+msgstr "Používateľské meno"
+
+#: flaskr/templates/auth/login.html:22
+msgid "Password"
+msgstr "Heslo"
+
+#: flaskr/templates/blog/create.html:9 flaskr/templates/blog/update.html:9
+msgid "Title"
+msgstr "Názov"
+
+#: flaskr/templates/blog/create.html:11 flaskr/templates/blog/update.html:12
+msgid "Body"
+msgstr "Správa"
+
+#: flaskr/templates/blog/create.html:13 flaskr/templates/blog/update.html:14
+msgid "Save"
+msgstr "Uložiť"
+
+#: flaskr/templates/blog/index.html:4
+msgid "Posts"
+msgstr "Správy"
+
+#: flaskr/templates/blog/index.html:6
+msgid "New"
+msgstr "Nová"
+
+#: flaskr/templates/blog/index.html:16
+msgid "by"
+msgstr "od"
+
+#: flaskr/templates/blog/index.html:16
+msgid "on"
+msgstr "v"
+
+#: flaskr/templates/blog/index.html:19 flaskr/templates/blog/update.html:4
+msgid "Edit"
+msgstr "Upraviť"
+
+#: flaskr/templates/blog/update.html:18
+msgid "Are you sure?"
+msgstr "Ste si istý/á?"
+
+#: flaskr/templates/blog/update.html:19
+msgid "Delete"
+msgstr "Odstrániť"
+

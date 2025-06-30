@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Log In{% endblock %}
+{% block title %}{{ _('Log In') }}{% endblock %}
 
 {% block content %}
 <div class="container py-4">
     <div class="row">
-        <h2 class="mb-4">Log In</h2>
+        <h2 class="mb-4">{{ _('Log In') }}</h2>
 
         <form method="post" novalidate>
             <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
+                <label for="username" class="form-label">{{ _('Username') }}</label>
                 <input type="text"
                        class="form-control"
                        name="username"
@@ -19,7 +19,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <label for="password" class="form-label">{{ _('Password') }}</label>
                 <input type="password"
                        class="form-control"
                        name="password"
@@ -28,7 +28,7 @@
                        autocomplete="current-password">
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">Log In</button>
+            <button type="submit" class="btn btn-primary w-100">{{ _('Log In') }}</button>
         </form>
     </div>
 </div>

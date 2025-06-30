@@ -5,6 +5,7 @@ from werkzeug.exceptions import abort
 
 from flaskr.auth import login_required
 from flaskr.db import get_db
+from flask_babel import gettext as _
 
 bp = Blueprint('blog', __name__)
 
@@ -27,7 +28,7 @@ def create():
         error = None
 
         if not title:
-            error = 'Title is required.'
+            error = _('Title is required.')
 
         if error is not None:
             flash(error)
@@ -52,7 +53,7 @@ def get_post(id, check_author=True):
     ).fetchone()
 
     if post is None:
-        abort(404, f"Post id {id} doesn't exist.")
+        abort(404, _("Post id %(id) doesn't exist.") % {'id': id})
 
     if check_author and post['author_id'] != g.user['id']:
         abort(403)
@@ -70,7 +71,7 @@ def update(id):
         error = None
 
         if not title:
-            error = 'Title is required.'
+            error = _('Title is required.')
 
         if error is not None:
             flash(error)
